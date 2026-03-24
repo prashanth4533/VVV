@@ -327,24 +327,21 @@
     .product-card:active {
       transform: scale(0.98);
     }
+.product-img-wrap {
+  position: relative;
+  height: 200px; /* 🔥 reduce from 300 */
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: #fff; /* cleaner than gradient */
+}
 
-    .product-img-wrap {
-      position: relative;
-      background: linear-gradient(135deg, var(--yellow-light) 0%, #FFF3AA 100%);
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .product-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* 🔥 KEY CHANGE */
+  object-position: center;  /* center crop */
+  display: block;
+}
     .product-emoji {
       font-size: 72px;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
@@ -930,7 +927,7 @@
       <!-- Toor Dal -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-toor-dal.jpg" alt="Toor Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Toor+Dal'" />
+          <img src="images/Toor dal.jpg" alt="Toor Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Toor+Dal'" />
         </div>
         <span class="fresh-badge">
           <span class="lang-en">Fresh Stock</span>
@@ -965,7 +962,7 @@
       <!-- Urad Dal -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-urad-dal.webp" alt="Urad Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Urad+Dal'" />
+          <img src="images/Urad Dal.jpg" alt="Urad Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Urad+Dal'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh Stock</span>
             <span class="lang-ta">புதிய கையிருப்பு</span>
@@ -1000,7 +997,7 @@
       <!-- Moong Dal -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-moong-dal.jpeg" alt="Moong Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Moong+Dal'" />
+          <img src="images/Moong Dal.jpg" alt="Moong Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Moong+Dal'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh Stock</span>
             <span class="lang-ta">புதிய கையிருப்பு</span>
@@ -1035,7 +1032,7 @@
       <!-- Chana Dal -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-chana-dal.jpg" alt="Chana Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Chana+Dal'" />
+          <img src="images/Chan Dal.jpg" alt="Chana Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Chana+Dal'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh Stock</span>
             <span class="lang-ta">புதிய கையிருப்பு</span>
@@ -1089,7 +1086,7 @@
       <!-- Green Gram -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-green-gram.jpg" alt="Green Gram" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Green+Gram'" />
+          <img src="images/Green gram.jpg" alt="Green Gram" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Green+Gram'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh</span>
             <span class="lang-ta">புதிய</span>
@@ -1124,7 +1121,7 @@
       <!-- Black Chana -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-black-chana.jpg" alt="Black Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Black+Chana'" />
+          <img src="images/Black Chana.jpg" alt="Black Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Black+Chana'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh</span>
             <span class="lang-ta">புதிய</span>
@@ -1159,7 +1156,7 @@
       <!-- White Chana -->
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="images-white-chana.jpg" alt="White Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=White+Chana'" />
+          <img src="images/White Chana.jpg" alt="White Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=White+Chana'" />
           <span class="fresh-badge">
             <span class="lang-en">Fresh</span>
             <span class="lang-ta">புதிய</span>
@@ -1182,130 +1179,6 @@
             </div>
           </div>
           <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20White%20Chana%201kg" target="_blank" rel="noopener" class="btn-order">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span class="lang-en">Order Now</span>
-            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── SPICES ─── -->
-  <section class="section">
-    <div class="section-header">
-      <p class="section-label">
-        <span class="lang-en">Premium Spices</span>
-        <span class="lang-ta">சிறந்த வளவேளை</span>
-      </p>
-      <h2 class="section-title">
-        <span class="lang-en">Aromatic & Fresh Powders</span>
-        <span class="lang-ta">வாசனை மற்றும் புதிய粉</span>
-      </h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="products-grid">
-
-      <!-- Turmeric Powder -->
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="images-turmeric.jpg" alt="Turmeric Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Turmeric+Powder'" />
-          <span class="fresh-badge">
-            <span class="lang-en">Fresh</span>
-            <span class="lang-ta">புதிய</span>
-          </span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">
-            <span class="lang-en">Turmeric Powder</span>
-            <span class="lang-ta">மஞ்சள் பொடி</span>
-          </h3>
-          <p class="product-tagline">
-            <span class="lang-en">Pure & 100% Natural</span>
-            <span class="lang-ta">தூய & 100% இயல்பான</span>
-          </p>
-          <div class="product-price-row">
-            <div class="product-price">₹180 <span>/ kg</span></div>
-            <div class="product-unit">
-              <span class="lang-en">Per KG</span>
-              <span class="lang-ta">ஒரு கிலோ</span>
-            </div>
-          </div>
-          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Turmeric%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span class="lang-en">Order Now</span>
-            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Chilli Powder -->
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="images-chilli.jpg" alt="Chilli Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Chilli+Powder'" />
-          <span class="fresh-badge">
-            <span class="lang-en">Fresh</span>
-            <span class="lang-ta">புதிய</span>
-          </span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">
-            <span class="lang-en">Chilli Powder</span>
-            <span class="lang-ta">மிளகாய் பொடி</span>
-          </h3>
-          <p class="product-tagline">
-            <span class="lang-en">Premium Red | Full Aroma</span>
-            <span class="lang-ta">சிறந்த சிவப்পு | முழு வாசனை</span>
-          </p>
-          <div class="product-price-row">
-            <div class="product-price">₹220 <span>/ kg</span></div>
-            <div class="product-unit">
-              <span class="lang-en">Per KG</span>
-              <span class="lang-ta">ஒரு கிலோ</span>
-            </div>
-          </div>
-          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Chilli%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span class="lang-en">Order Now</span>
-            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Coriander Powder -->
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="images-coriander.jpg" alt="Coriander Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Coriander+Powder'" />
-          <span class="fresh-badge">
-            <span class="lang-en">Fresh</span>
-            <span class="lang-ta">புதிய</span>
-          </span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">
-            <span class="lang-en">Coriander Powder</span>
-            <span class="lang-ta">கொத்தமல்லி பொடி</span>
-          </h3>
-          <p class="product-tagline">
-            <span class="lang-en">Ground Fresh | No Additives</span>
-            <span class="lang-ta">புதிய அரைத்து | சேர்க்கை இல்லை</span>
-          </p>
-          <div class="product-price-row">
-            <div class="product-price">₹160 <span>/ kg</span></div>
-            <div class="product-unit">
-              <span class="lang-en">Per KG</span>
-              <span class="lang-ta">ஒரு கிலோ</span>
-            </div>
-          </div>
-          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Coriander%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
