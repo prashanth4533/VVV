@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F5C518" />
+  <meta name="description" content="Fresh dal, grains, and spices from trusted traders in Madurai. Retail & wholesale available. Order on WhatsApp." />
+  <meta name="keywords" content="dal, grains, spices, wholesale, retail, Madurai" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="VVV Traders" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Crect fill='%23F5C518' width='180' height='180' rx='40'/%3E%3Ctext x='90' y='90' font-size='70' font-weight='900' fill='%231A1A1A' text-anchor='middle' dominant-baseline='central' font-family='Arial, sans-serif'%3EVVV%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="./manifest.json" />
+  <title>VVV Traders – Fresh Dal, Madurai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --yellow: #F5C518;
+      --yellow-dark: #D4A800;
+      --yellow-light: #FFF8D6;
+      --yellow-pale: #FFFBEA;
+      --black: #1A1A1A;
+      --grey: #555;
+      --light-grey: #888;
+      --white: #fff;
+      --card-shadow: 0 4px 24px rgba(245,197,24,0.13), 0 2px 8px rgba(0,0,0,0.07);
+      --radius: 18px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--yellow-light);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--black);
+      letter-spacing: -1px;
+      box-shadow: 0 2px 8px rgba(245,197,24,0.4);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-family: 'Nunito', sans-serif;
+      font-size: 10px;
+      color: var(--light-grey);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: var(--yellow-light);
+      border-radius: 50px;
+      padding: 4px;
+      gap: 2px;
+      border: 1.5px solid var(--yellow);
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: none;
+      background: transparent;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--grey);
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--yellow);
+      color: var(--black);
+      box-shadow: 0 2px 6px rgba(245,197,24,0.4);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(160deg, var(--yellow-pale) 0%, #fff 60%);
+      padding: 56px 24px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: var(--yellow);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 180px;
+      height: 180px;
+      background: var(--yellow);
+      opacity: 0.07;
+      border-radius: 50%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge span { font-size: 14px; }
+
+    .hero-logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-vvv {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(56px, 16vw, 80px);
+      color: var(--black);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .hero-vvv span {
+      color: var(--yellow-dark);
+    }
+
+    .hero-brand-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--light-grey);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtext {
+      font-size: 15px;
+      color: var(--grey);
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-whatsapp:active {
+      transform: scale(0.97);
+    }
+
+    .btn-whatsapp svg { flex-shrink: 0; }
+
+    .hero-trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--grey);
+    }
+
+    .hero-trust-pill::before {
+      content: '✓';
+      width: 18px;
+      height: 18px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--black);
+      font-weight: 900;
+    }
+
+    /* ─── SECTION HEADERS ─── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--yellow-dark);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 7vw, 34px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 4px;
+      background: var(--yellow);
+      border-radius: 2px;
+      margin: 14px auto 0;
+    }
+
+    /* ─── PRODUCTS ─── */
+    .section {
+      padding: 56px 20px;
+    }
+
+    .section-alt {
+      background: var(--yellow-pale);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      border: 1.5px solid var(--yellow-light);
+      transition: transform 0.2s;
+    }
+
+    .product-card:active {
+      transform: scale(0.98);
+    }
+
+    .product-img-wrap {
+      position: relative;
+      background: linear-gradient(135deg, var(--yellow-light) 0%, #FFF3AA 100%);
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-emoji {
+      font-size: 72px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+    }
+
+    .fresh-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #25D366;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .product-body {
+      padding: 18px 18px 20px;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .product-tagline {
+      font-size: 12px;
+      color: var(--light-grey);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .product-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--black);
+    }
+
+    .product-price span {
+      font-size: 14px;
+      color: var(--light-grey);
+      font-weight: 600;
+    }
+
+    .product-unit {
+      font-size: 11px;
+      background: var(--yellow-light);
+      color: var(--yellow-dark);
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    .btn-order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 13px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 3px 12px rgba(245,197,24,0.4);
+      transition: background 0.15s, transform 0.15s;
+      width: 100%;
+    }
+
+    .btn-order:active {
+      background: var(--yellow-dark);
+      transform: scale(0.97);
+    }
+
+    /* ─── TRUST ─── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .trust-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1.5px solid var(--yellow-light);
+      text-align: center;
+    }
+
+    .trust-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .trust-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .trust-desc {
+      font-size: 11px;
+      color: var(--light-grey);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ─── PROCESS ─── */
+    .process-list {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 56px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--yellow), transparent);
+    }
+
+    .process-num {
+      width: 44px;
+      height: 44px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--black);
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(245,197,24,0.4);
+    }
+
+    .process-content { padding-top: 2px; }
+
+    .process-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+
+    .process-desc {
+      font-size: 13px;
+      color: var(--grey);
+      font-weight: 600;
+    }
+
+    /* ─── LOCATION ─── */
+    .location-section {
+      background: var(--black);
+      color: var(--white);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .location-icon {
+      font-size: 40px;
+      margin-bottom: 14px;
+    }
+
+    .location-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+
+    .location-sub {
+      font-size: 14px;
+      color: #aaa;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .location-map-block {
+      background: #2a2a2a;
+      border-radius: 16px;
+      padding: 24px 20px;
+      max-width: 360px;
+      margin: 0 auto;
+      border: 1.5px solid #333;
+    }
+
+    .map-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 6px;
+    }
+
+    .map-city {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .map-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .map-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .map-dot:nth-child(2) { opacity: 1; transform: scale(1.3); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      color: #666;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    footer strong {
+      color: var(--yellow);
+    }
+
+    /* ─── FLOATING WA ─── */
+    .float-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      animation: float-pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes float-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.75); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (min-width: 500px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 700px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+      }
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 900px;
+      }
+      .process-list {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0;
+        max-width: 900px;
+      }
+      .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        padding: 20px 10px;
+      }
+      .process-step:not(:last-child)::after {
+        top: 22px;
+        left: 60%;
+        right: -40%;
+        bottom: unset;
+        width: auto;
+        height: 2px;
+        background: linear-gradient(to right, var(--yellow), transparent);
+      }
+    }
+
+    /* ─── LANG HIDDEN ─── */
+    .lang-en, .lang-ta {
+      transition: opacity 0.2s;
+    }
+    .lang-ta { display: none; }
+    body.tamil .lang-en { display: none; }
+    body.tamil .lang-ta { display: unset; }
+
+    /* Inline elements */
+    span.lang-ta { display: none; }
+    body.tamil span.lang-en { display: none; }
+    body.tamil span.lang-ta { display: inline; }
+
+    /* ─── INSTALL PROMPT ─── */
+    #install-prompt {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+      color: var(--white);
+      padding: 16px 20px 20px;
+      border-top: 2px solid var(--yellow);
+      display: none;
+      animation: slide-up 0.3s ease-out;
+    }
+
+    #install-prompt.show {
+      display: block;
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .install-prompt-content {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .install-prompt-text {
+      flex: 1;
+    }
+
+    .install-prompt-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .install-prompt-subtitle {
+      font-size: 12px;
+      color: #aaa;
+      font-weight: 600;
+    }
+
+    .install-prompt-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-install {
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(245,197,24,0.4);
+      transition: background 0.15s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-install:active {
+      transform: scale(0.97);
+    }
+
+    .btn-install:hover {
+      background: var(--yellow-dark);
+    }
+
+    .btn-cancel {
+      background: transparent;
+      color: #aaa;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-cancel:hover {
+      color: var(--white);
+      border-color: #aaa;
+    }
+
+    /* ─── OFFLINE INDICATOR ─── */
+    #offline-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 250;
+      background: #d32f2f;
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      display: none;
+      animation: fade-in 0.3s ease-out;
+    }
+
+    #offline-indicator.show {
+      display: block;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Adjust nav margin when offline indicator is shown */
+    body.offline nav {
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── OFFLINE INDICATOR ─── -->
+  <div id="offline-indicator">
+    📴 You're offline. Some content may still be available from cache.
+  </div>
+
+  <!-- ─── INSTALL PROMPT ─── -->
+  <div id="install-prompt">
+    <div class="install-prompt-content">
+      <div class="install-prompt-text">
+        <div class="install-prompt-title">
+          <span class="lang-en">📱 Install VVV Traders App</span>
+          <span class="lang-ta">📱 VVV Traders অ্যাপ ইনস্টল করুন</span>
+        </div>
+        <div class="install-prompt-subtitle">
+          <span class="lang-en">Fast, offline access & notifications</span>
+          <span class="lang-ta">দ্রুত, অফলাইন অ্যাক্সেস এবং বিজ্ঞপ্তি</span>
+        </div>
+      </div>
+      <div class="install-prompt-actions">
+        <button class="btn-install" id="btn-install">
+          <span class="lang-en">Install</span>
+          <span class="lang-ta">ইনস্টল করুন</span>
+        </button>
+        <button class="btn-cancel" id="btn-cancel">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="logo-emblem">VVV</div>
+      <div>
+        <div class="logo-text">VVV Traders</div>
+        <div class="logo-sub">Madurai · Est. Dal Traders</div>
+      </div>
+    </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>🌾</span>
+      <span class="lang-en">Trusted Since Day One</span>
+      <span class="lang-ta">நம்பகமான வணிகர்கள்</span>
+    </div>
+    <div class="hero-logo-block">
+      <div class="hero-vvv">V<span>V</span>V</div>
+      <div class="hero-brand-name">Traders · Madurai</div>
+    </div>
+    <h1 class="hero-tagline">
+      <span class="lang-en">Fresh Dal. Clean Quality.<br>Direct to Your Home.</span>
+      <span class="lang-ta">புதிய பருப்பு. சுத்தமான தரம்.<br>உங்கள் வீட்டிற்கு நேரடியாக.</span>
+    </h1>
+    <p class="hero-subtext">
+      <span class="lang-en">From trusted traders in Madurai to your kitchen</span>
+      <span class="lang-ta">மதுரையிலிருந்து உங்கள் சமையலறைக்கு</span>
+    </p>
+    <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20dal%20from%20VVV%20Traders" class="btn-whatsapp" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span class="lang-en">Order on WhatsApp</span>
+      <span class="lang-ta">வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்</span>
+    </a>
+    <div class="hero-trust-row">
+      <div class="hero-trust-pill">
+        <span class="lang-en">Fresh Stock Weekly</span>
+        <span class="lang-ta">வாரம் புதிய கையிருப்பு</span>
+      </div>
+      <div class="hero-trust-pill">
+        <span class="lang-en">No Stones, No Dust</span>
+        <span class="lang-ta">கற்கள் இல்லை, தூசு இல்லை</span>
+      </div>
+      <div class="hero-trust-pill">
+        <span class="lang-en">Honest Pricing</span>
+        <span class="lang-ta">நேர்மையான விலை</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRODUCTS ─── -->
+  <section class="section" id="products">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Our Products</span>
+        <span class="lang-ta">எங்கள் பொருட்கள்</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Premium Quality Dal</span>
+        <span class="lang-ta">உயர்தர பருப்பு வகைகள்</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Toor Dal -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-toor-dal.jpg" alt="Toor Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Toor+Dal'" />
+        </div>
+        <span class="fresh-badge">
+          <span class="lang-en">Fresh Stock</span>
+          <span class="lang-ta">புதிய கையிருப்பு</span>
+        </span>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Toor Dal</span>
+            <span class="lang-ta">துவரம் பருப்பு</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Premium Quality | Cleaned & Sorted</span>
+            <span class="lang-ta">சிறந்த தரம் | சுத்தம் செய்யப்பட்டது</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹130 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Toor%20Dal%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Urad Dal -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-urad-dal.webp" alt="Urad Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Urad+Dal'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh Stock</span>
+            <span class="lang-ta">புதிய கையிருப்பு</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Urad Dal</span>
+            <span class="lang-ta">உளுந்து பருப்பு</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Unpolished | Fresh Stock</span>
+            <span class="lang-ta">மெருகூட்டப்படாதது | புதிய கையிருப்பு</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹140 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Urad%20Dal%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Moong Dal -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-moong-dal.jpeg" alt="Moong Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Moong+Dal'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh Stock</span>
+            <span class="lang-ta">புதிய கையிருப்பு</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Moong Dal</span>
+            <span class="lang-ta">பச்சைப் பருப்பு</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Light & Healthy | No Dust</span>
+            <span class="lang-ta">இலகுரக & ஆரோக்கியமான | தூசு இல்லை</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹120 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Moong%20Dal%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chana Dal -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-chana-dal.jpg" alt="Chana Dal" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Chana+Dal'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh Stock</span>
+            <span class="lang-ta">புதிய கையிருப்பு</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Chana Dal</span>
+            <span class="lang-ta">கொண்டைக்കடலை</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Premium Grade | High Protein</span>
+            <span class="lang-ta">சிறந்த தரம் | உচ்চ புரத</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹110 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Chana%20Dal%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── GRAINS & PULSES ─── -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Whole Grains</span>
+        <span class="lang-ta">முழு தானியங்கள்</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Healthy Pulses & Grains</span>
+        <span class="lang-ta">ஆரோக்கியமான பருப்பு மற்றும் தானியங்கள்</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Green Gram -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-green-gram.jpg" alt="Green Gram" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Green+Gram'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Green Gram</span>
+            <span class="lang-ta">பச்சை பீன்ஸ்</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Organic & Sproutable</span>
+            <span class="lang-ta">கரிம & முளைக்கக்கூடிய</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹110 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Green%20Gram%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Black Chana -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-black-chana.jpg" alt="Black Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Black+Chana'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Black Chana</span>
+            <span class="lang-ta">கருப்பு கொண்டைக்கடலை</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">No Dust | Cleaned Daily</span>
+            <span class="lang-ta">தூசு இல்லை | தினமும் சுத்தம்</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹100 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Black%20Chana%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- White Chana -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-white-chana.jpg" alt="White Chana" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=White+Chana'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">White Chana</span>
+            <span class="lang-ta">வெள்ளை கொண்டைக்கடலை</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Premium Quality | High Fiber</span>
+            <span class="lang-ta">சிறந்த தரம் | அதிக நார்</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹105 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20White%20Chana%201kg" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SPICES ─── -->
+  <section class="section">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Premium Spices</span>
+        <span class="lang-ta">சிறந்த வளவேளை</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Aromatic & Fresh Powders</span>
+        <span class="lang-ta">வாசனை மற்றும் புதிய粉</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Turmeric Powder -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-turmeric.jpg" alt="Turmeric Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Turmeric+Powder'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Turmeric Powder</span>
+            <span class="lang-ta">மஞ்சள் பொடி</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Pure & 100% Natural</span>
+            <span class="lang-ta">தூய & 100% இயல்பான</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹180 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Turmeric%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chilli Powder -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-chilli.jpg" alt="Chilli Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Chilli+Powder'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Chilli Powder</span>
+            <span class="lang-ta">மிளகாய் பொடி</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Premium Red | Full Aroma</span>
+            <span class="lang-ta">சிறந்த சிவப்পு | முழு வாசனை</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹220 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Chilli%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coriander Powder -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images-coriander.jpg" alt="Coriander Powder" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x180/fff8d6/333?text=Coriander+Powder'" />
+          <span class="fresh-badge">
+            <span class="lang-en">Fresh</span>
+            <span class="lang-ta">புதிய</span>
+          </span>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <span class="lang-en">Coriander Powder</span>
+            <span class="lang-ta">கொத்தமல்லி பொடி</span>
+          </h3>
+          <p class="product-tagline">
+            <span class="lang-en">Ground Fresh | No Additives</span>
+            <span class="lang-ta">புதிய அரைத்து | சேர்க்கை இல்லை</span>
+          </p>
+          <div class="product-price-row">
+            <div class="product-price">₹160 <span>/ kg</span></div>
+            <div class="product-unit">
+              <span class="lang-en">Per KG</span>
+              <span class="lang-ta">ஒரு கிலோ</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20Coriander%20Powder%20500g" target="_blank" rel="noopener" class="btn-order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="lang-en">Order Now</span>
+            <span class="lang-ta">இப்போது ஆர்டர் செய்யுங்கள்</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── WHOLESALE ─── -->
+  <section class="section section-alt" id="wholesale">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">B2B Solutions</span>
+        <span class="lang-ta">B2B தீர்வுகள்</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Bulk & Wholesale Supply</span>
+        <span class="lang-ta">மொத்த விநியோகம்</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 480px; margin: 0 auto;">
+      <div style="background: var(--white); border-radius: 18px; padding: 28px 20px; box-shadow: var(--card-shadow); border: 1.5px solid var(--yellow-light);">
+
+        <div style="text-align: center; margin-bottom: 24px;">
+          <p style="font-size: 13px; color: var(--light-grey); font-weight: 600; margin-bottom: 8px;">
+            <span class="lang-en">Perfect For</span>
+            <span class="lang-ta">சிறந்தது</span>
+          </p>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--black); line-height: 1.3;">
+            <span class="lang-en">🏪 Grocery Shops<br>🏨 Hotels & Catering<br>🔄 Resellers<br>🏬 Supermarkets</span>
+            <span class="lang-ta">🏪 மளிகை கடைகள்<br>🏨 ஹோட்டல் & உணவு<br>🔄 மறுவிற்பனையாளர்<br>🏬 சூப்பர் மார்க்கெட்</span>
+          </h3>
+        </div>
+
+        <div style="display: grid; gap: 14px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="font-size: 24px;">💰</span>
+            <div>
+              <div style="font-weight: 700; color: var(--black); font-size: 14px;">
+                <span class="lang-en">Best Bulk Pricing</span>
+                <span class="lang-ta">சிறந்த மொத்த விலை</span>
+              </div>
+              <div style="font-size: 12px; color: var(--light-grey); margin-top: 2px;">
+                <span class="lang-en">Discounts on 25kg+ orders</span>
+                <span class="lang-ta">25கிग +ஆர்டரில் ছাড়</span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="font-size: 24px;">📦</span>
+            <div>
+              <div style="font-weight: 700; color: var(--black); font-size: 14px;">
+                <span class="lang-en">Flexible Packaging</span>
+                <span class="lang-ta">நমনீய பேकேजிங்</span>
+              </div>
+              <div style="font-size: 12px; color: var(--light-grey); margin-top: 2px;">
+                <span class="lang-en">25kg / 50kg bags available</span>
+                <span class="lang-ta">25கிग / 50கிग பைகள்</span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="font-size: 24px;">🚚</span>
+            <div>
+              <div style="font-weight: 700; color: var(--black); font-size: 14px;">
+                <span class="lang-en">Consistent Supply</span>
+                <span class="lang-ta">தொடர்ந்த விநியோகம்</span>
+              </div>
+              <div style="font-size: 12px; color: var(--light-grey); margin-top: 2px;">
+                <span class="lang-en">Regular stock, always available</span>
+                <span class="lang-ta">முறையான கையிருப்பு</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919865432630?text=Hi%2C%20I%20am%20interested%20in%20wholesale%20pricing%20for%20bulk%20orders" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--yellow); color: var(--black); font-size: 16px; font-weight: 800; padding: 16px 20px; border-radius: 12px; text-decoration: none; box-shadow: 0 3px 12px rgba(245,197,24,0.4); transition: background 0.15s;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span class="lang-en">Contact for Wholesale Pricing</span>
+          <span class="lang-ta">மொத்த விலைக்கு தொடர்பு</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Our Story</span>
+        <span class="lang-ta">நமது கதை</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">About VVV Traders</span>
+        <span class="lang-ta">VVV வணிகர்கள் பற்றி</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 16px; color: var(--grey); font-weight: 600; line-height: 1.7; margin-bottom: 20px;">
+        <span class="lang-en">VVV Traders is a trusted wholesale business based in Madurai, Tamil Nadu. With years of experience in bulk pulses and grocery supply, we've built strong relationships with farmers and suppliers to bring you the freshest products at honest prices.</span>
+        <span class="lang-ta">VVV வணிகர்கள் மதுரை, தமிழ்நாட்டில் அமைந்துள்ள ஒரு நம்பகமான மொத்த வணிகம். பருப்பு மற்றும் மளிகை பொருட்கள் வழங்குவதில் பல வருட அனுபவத்துடன், விவசாயிகள் மற்றும் சப்ளையர்களுடன் வலுவான உறவுகளை உருவாக்கி, புதிய பொருட்களை நேர்மையான விலையে கொண்டு வருகிறோம்.</span>
+      </p>
+      <p style="font-size: 16px; color: var(--grey); font-weight: 600; line-height: 1.7;">
+        <span class="lang-en">From our warehouse to your kitchen or shop – we ensure every step maintains quality. No middlemen, no compromise. Just fresh dal, grains, and spices you can trust.</span>
+        <span class="lang-ta">எங்கள் கிடங்கு முதல் உங்கள் சமையலறை அல்லது கடை வரை - ஒவ்வொரு வைப்பிலும் தரத்தை பராமரிக்கிறோம். இடைத்தரகர் இல்லை, சமரசம் இல்லை. நீங்கள் நம்பக்கூடிய புதிய பருப்பு, தானியங்கள் மற்றும் மசாலாக்கள் மட்டுமே.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── PACKAGING ─── -->
+  <section class="section section-alt" id="packaging">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Our Packaging</span>
+        <span class="lang-ta">நமது பேகேஜிங்</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Hygienic & Sealed Packing</span>
+        <span class="lang-ta">சுகாதாரமான & சீல் செய்யப்பட்ட பேகேஜிங்</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="trust-grid" style="max-width: 600px;">
+      <div class="trust-card">
+        <span class="trust-icon">📦</span>
+        <div class="trust-title">
+          <span class="lang-en">Retail Packs</span>
+          <span class="lang-ta">খুচরা প্যাকেজ</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">500g / 1kg / 5kg pouches</span>
+          <span class="lang-ta">500ग्राम / 1कि /५कि</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">📫</span>
+        <div class="trust-title">
+          <span class="lang-en">Wholesale Bags</span>
+          <span class="lang-ta">மொத்த பைகள்</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">25kg / 50kg bags</span>
+          <span class="lang-ta">25கிग / 50கிग பைகள்</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">🔒</span>
+        <div class="trust-title">
+          <span class="lang-en">Sealed & Fresh</span>
+          <span class="lang-ta">சீல் & புதிய</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">Never opened before delivery</span>
+          <span class="lang-ta">டெலிவரிக்கு முன் திறக்கப்படவில்லை</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">♻️</span>
+        <div class="trust-title">
+          <span class="lang-en">Eco-Friendly</span>
+          <span class="lang-ta">சுற்றுச்சூழல் நட்பு</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">Recyclable & reusable bags</span>
+          <span class="lang-ta">மறுசுழற்சி சாத்தியம் பைகள்</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST ─── -->
+  <section class="section section-alt" id="trust">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Our Promise</span>
+        <span class="lang-ta">எங்கள் வாக்குறுதி</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Why VVV Traders?</span>
+        <span class="lang-ta">ஏன் VVV வணிகர்கள்?</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <span class="trust-icon">🌾</span>
+        <div class="trust-title">
+          <span class="lang-en">Fresh Stock Every Week</span>
+          <span class="lang-ta">வாரம் புதிய கையிருப்பு</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">Always fresh, never old</span>
+          <span class="lang-ta">எப்போதும் புதியது</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">✨</span>
+        <div class="trust-title">
+          <span class="lang-en">Cleaned & Sorted</span>
+          <span class="lang-ta">சுத்தம் செய்யப்பட்டது</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">No stones, no dust</span>
+          <span class="lang-ta">கற்கள் இல்லை, தூசு இல்லை</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">🤝</span>
+        <div class="trust-title">
+          <span class="lang-en">Direct from Traders</span>
+          <span class="lang-ta">வணிகர்களிடம் இருந்து நேரடியாக</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">No middlemen involved</span>
+          <span class="lang-ta">இடைத்தரகர் இல்லை</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">💛</span>
+        <div class="trust-title">
+          <span class="lang-en">Honest Pricing</span>
+          <span class="lang-ta">நேர்மையான விலை</span>
+        </div>
+        <div class="trust-desc">
+          <span class="lang-en">Fair price, always</span>
+          <span class="lang-ta">எப்போதும் நியாயமான விலை</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESS ─── -->
+  <section class="section" id="process">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">How It Works</span>
+        <span class="lang-ta">எப்படி செயல்படுகிறது</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">From Source to Your Kitchen</span>
+        <span class="lang-ta">மூலத்திலிருந்து உங்கள் சமையலறைக்கு</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="process-list">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-content">
+          <div class="process-title">
+            <span class="lang-en">We Source</span>
+            <span class="lang-ta">நாங்கள் சேகரிக்கிறோம்</span>
+          </div>
+          <div class="process-desc">
+            <span class="lang-en">Directly from trusted farmers & markets</span>
+            <span class="lang-ta">நம்பகமான விவசாயிகளிடம் இருந்து</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-content">
+          <div class="process-title">
+            <span class="lang-en">We Clean</span>
+            <span class="lang-ta">நாங்கள் சுத்தம் செய்கிறோம்</span>
+          </div>
+          <div class="process-desc">
+            <span class="lang-en">Sorted, sieved, no stones or dust</span>
+            <span class="lang-ta">கற்கள் மற்றும் தூசு நீக்கப்படுகின்றன</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-content">
+          <div class="process-title">
+            <span class="lang-en">We Pack</span>
+            <span class="lang-ta">நாங்கள் பேக் செய்கிறோம்</span>
+          </div>
+          <div class="process-desc">
+            <span class="lang-en">Hygienically packed in fresh bags</span>
+            <span class="lang-ta">சுகாதாரமான பைகளில் பேக் செய்யப்படுகிறது</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-content">
+          <div class="process-title">
+            <span class="lang-en">We Deliver</span>
+            <span class="lang-ta">நாங்கள் டெலிவரி செய்கிறோம்</span>
+          </div>
+          <div class="process-desc">
+            <span class="lang-en">Right to your door in Madurai</span>
+            <span class="lang-ta">மதுரையில் உங்கள் வீட்டு வாசல் வரை</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="section section-alt" id="contact">
+    <div class="section-header">
+      <p class="section-label">
+        <span class="lang-en">Get In Touch</span>
+        <span class="lang-ta">தொடர்பு கொள்ளுங்கள்</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-en">Contact VVV Traders</span>
+        <span class="lang-ta">VVV வணிகர்களைத் தொடர்பு கொள்ளுங்கள்</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="max-width: 480px; margin: 0 auto;">
+      <div style="display: grid; gap: 18px; text-align: center;">
+
+        <div style="background: var(--white); border-radius: 16px; padding: 20px; border: 1.5px solid var(--yellow-light); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <div style="font-size: 28px; margin-bottom: 10px;">📱</div>
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--yellow-dark); margin-bottom: 6px;">
+            <span class="lang-en">Phone</span>
+            <span class="lang-ta">தொலைபேசி</span>
+          </div>
+          <a href="tel:+919865432630" style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--black); text-decoration: none;">+91 98654 32630</a>
+        </div>
+
+        <div style="background: var(--white); border-radius: 16px; padding: 20px; border: 1.5px solid var(--yellow-light); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <div style="font-size: 28px; margin-bottom: 10px;">🏘️</div>
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--yellow-dark); margin-bottom: 6px;">
+            <span class="lang-en">Location</span>
+            <span class="lang-ta">இடம்</span>
+          </div>
+          <p style="font-size: 14px; color: var(--grey); font-weight: 700;">Madurai, Tamil Nadu<br>
+            <span style="font-size: 12px; color: var(--light-grey); font-weight: 600;">
+              <span class="lang-en">Delivery across India</span>
+              <span class="lang-ta">இந்தியா முழுவதும் டெலிவரி</span>
+            </span>
+          </p>
+        </div>
+
+        <div style="background: var(--white); border-radius: 16px; padding: 20px; border: 1.5px solid var(--yellow-light); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <div style="font-size: 28px; margin-bottom: 10px;">💳</div>
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--yellow-dark); margin-bottom: 6px;">
+            <span class="lang-en">Payment</span>
+            <span class="lang-ta">பணம்</span>
+          </div>
+          <p style="font-size: 14px; color: var(--grey); font-weight: 700;">
+            <span class="lang-en">All Methods Accepted</span>
+            <span class="lang-ta">அனைத்து முறைகளும் ஏற்றுக்கொள்ளப்படுகிறது</span>
+          </p>
+        </div>
+
+      </div>
+
+      <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20know%20more%20about%20VVV%20Traders" class="btn-whatsapp" target="_blank" rel="noopener" style="margin-top: 28px; display: flex;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="lang-en">Chat with Us on WhatsApp</span>
+        <span class="lang-ta">வாட்ஸ்அப்பில் எங்களுடன் பேசுங்கள்</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p><strong>VVV Traders</strong> · Madurai, Tamil Nadu · +91 98654 32630</p>
+    <p style="margin-top:8px; font-size:11px;">
+      <span class="lang-en">© 2025 VVV Traders. Fresh dal, every week. | <a href="tel:+919865432630" style="color: var(--yellow); text-decoration: none;">Call Now</a></span>
+      <span class="lang-ta">© 2025 VVV வணிகர்கள். வாரம் புதிய பருப்பு. | <a href="tel:+919865432630" style="color: var(--yellow); text-decoration: none;">இப்போது அழைக்கவும்</a></span>
+    </p>
+  </footer>
+
+  <!-- ─── FLOATING WHATSAPP ─── -->
+  <a href="https://wa.me/919865432630?text=Hi%2C%20I%20want%20to%20order%20dal%20from%20VVV%20Traders" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    function setLang(lang) {
+      const body = document.body;
+      const btnEn = document.getElementById('btn-en');
+      const btnTa = document.getElementById('btn-ta');
+
+      if (lang === 'ta') {
+        body.classList.add('tamil');
+        btnTa.classList.add('active');
+        btnEn.classList.remove('active');
+        document.documentElement.lang = 'ta';
+      } else {
+        body.classList.remove('tamil');
+        btnEn.classList.add('active');
+        btnTa.classList.remove('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    // ────────────────────────────────────────
+    // PWA Service Worker Registration
+    // ────────────────────────────────────────
+
+    if ('serviceWorker' in navigator) {
+      // Register service worker for PWA functionality
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(registration => {
+          console.log('✓ Service Worker registered:', registration);
+        })
+        .catch(error => {
+          console.log('✗ Service Worker registration failed:', error);
+        });
+    }
+
+    // ────────────────────────────────────────
+    // Install Prompt Handler
+    // ────────────────────────────────────────
+
+    let deferredPrompt = null;
+    const installPrompt = document.getElementById('install-prompt');
+    const btnInstall = document.getElementById('btn-install');
+    const btnCancel = document.getElementById('btn-cancel');
+
+    // Capture the install prompt event
+    window.addEventListener('beforeinstallprompt', event => {
+      event.preventDefault();
+      deferredPrompt = event;
+      
+      // Show the install prompt UI after 3 seconds
+      setTimeout(() => {
+        installPrompt.classList.add('show');
+        console.log('✓ Install prompt available');
+      }, 3000);
+    });
+
+    // Handle install button click
+    btnInstall.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('User choice:', outcome);
+        deferredPrompt = null;
+        installPrompt.classList.remove('show');
+      }
+    });
+
+    // Handle cancel button click
+    btnCancel.addEventListener('click', () => {
+      installPrompt.classList.remove('show');
+      deferredPrompt = null;
+    });
+
+    // Hide install prompt when app is installed
+    window.addEventListener('appinstalled', () => {
+      console.log('✓ App installed successfully!');
+      installPrompt.classList.remove('show');
+      deferredPrompt = null;
+    });
+
+    // ────────────────────────────────────────
+    // Online/Offline Status Handler
+    // ────────────────────────────────────────
+
+    const offlineIndicator = document.getElementById('offline-indicator');
+
+    function updateOnlineStatus() {
+      if (navigator.onLine) {
+        offlineIndicator.classList.remove('show');
+        document.body.classList.remove('offline');
+        console.log('✓ Back online');
+      } else {
+        offlineIndicator.classList.add('show');
+        document.body.classList.add('offline');
+        console.log('✗ Connection lost');
+      }
+    }
+
+    // Check initial status
+    updateOnlineStatus();
+
+    // Listen for connection changes
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    // ────────────────────────────────────────
+    // Web App Metadata
+    // ────────────────────────────────────────
+
+    console.log('✓ VVV Traders PWA loaded');
+  </script>
+
+</body>
+</html>

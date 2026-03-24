@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - VVV Traders</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(160deg, #FFFBEA 0%, #fff 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #1A1A1A;
+    }
+
+    .offline-container {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px 24px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 4px 24px rgba(245,197,24,0.13), 0 2px 8px rgba(0,0,0,0.07);
+      border: 1.5px solid #FFF8D6;
+    }
+
+    .offline-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: block;
+      animation: float-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .offline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1A1A1A;
+    }
+
+    .offline-subtitle {
+      font-size: 14px;
+      color: #555;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .offline-message {
+      background: #FFF8D6;
+      border-left: 4px solid #F5C518;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .offline-tips {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .offline-tips h3 {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #F5C518;
+      margin-bottom: 12px;
+    }
+
+    .offline-tips ul {
+      list-style: none;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .offline-tips li {
+      margin-bottom: 8px;
+    }
+
+    .offline-tips li::before {
+      content: '✓ ';
+      color: #25D366;
+      font-weight: 800;
+      margin-right: 6px;
+    }
+
+    .offline-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: #F5C518;
+      color: #1A1A1A;
+      box-shadow: 0 3px 12px rgba(245,197,24,0.4);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #1A1A1A;
+      border: 1.5px solid #F5C518;
+    }
+
+    .status-indicator {
+      font-size: 12px;
+      padding: 8px 12px;
+      background: #ffe0e0;
+      color: #d32f2f;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    .status-indicator.online {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="offline-container">
+    <span class="offline-icon">📴</span>
+
+    <h1 class="offline-title">You're Offline</h1>
+
+    <p class="offline-subtitle">
+      It looks like your internet connection is unavailable right now.
+    </p>
+
+    <div class="offline-message">
+      💡 <strong>Good news:</strong> Some of the content you've already viewed may still be available from your device's cache!
+    </div>
+
+    <div class="offline-tips">
+      <h3>What you can do:</h3>
+      <ul>
+        <li>Check your internet connection</li>
+        <li>Browse previously cached pages</li>
+        <li>Try going back to the main site</li>
+        <li>Return when your connection is back</li>
+      </ul>
+    </div>
+
+    <div class="offline-actions">
+      <button class="btn btn-primary" onclick="location.reload()">
+        🔄 Try Again
+      </button>
+      <button class="btn btn-secondary" onclick="history.back()">
+        ← Go Back
+      </button>
+    </div>
+
+    <div id="status" class="status-indicator">
+      🔴 No Connection
+    </div>
+  </div>
+
+  <script>
+    // Check online/offline status
+    function updateStatus() {
+      const status = document.getElementById('status');
+      if (navigator.onLine) {
+        status.textContent = '🟢 Back Online!';
+        status.classList.add('online');
+        setTimeout(() => {
+          location.reload();
+        }, 1500);
+      } else {
+        status.textContent = '🔴 No Connection';
+        status.classList.remove('online');
+      }
+    }
+
+    // Listen for connection changes
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+
+    // Initial check
+    updateStatus();
+  </script>
+
+</body>
+</html>
